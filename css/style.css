@@ -1,0 +1,86 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+:root {
+  --Light-green: #7ed56f;
+  --Medium-green: #55c57a;
+  --Dark-green: #28b485;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 테두리와 패딩이 더 이상 추가되지 않도록 전체 너비 또는 전체 높이로 상자 설정 */
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh; /* 뷰포트의 95% */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /*시계방향으로 찍은 좌표를 이은 폴리곤 만들기, 첫번째 좌표를 기준으로 나머지 좌표들은 앱실론, 쉽게 하려면 관련 웹사이트 서비스 이용 https://bennettfeely.com/clippy/ */
+
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px; /* 부모 요소는 relative 포지션이어야지, 이를 기준으로 위에서 40px 떨어진 위치로 고정*/
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 중앙에 놓으려면 위처럼 transform, translate도 사용해주어야 한다*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+}
